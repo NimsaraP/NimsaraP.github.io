@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <!- <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+    <title>Professional Journey - Nimsara Perera</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        nav {
+            background: white;
+            padding: 1.5rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #666;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-subtitle {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 5rem;
+        }
+
+        .experience-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        }
+
+        .company-logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+        }
+
+        .logo-green { background: #e8f5e9; }
+        .logo-orange { background: #fff3e0; }
+        .logo-blue { background: #e3f2fd; }
+        .logo-red { background: #ffebee; }
+
+        .experience-content {
+            flex: 1;
+        }
+
+        .job-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 0.3rem;
+        }
+
+        .company-name {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 0.3rem;
+        }
+
+        .job-meta {
+            font-size: 0.85rem;
+            color: #999;
+            margin-bottom: 1rem;
+        }
+
+        .job-description {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 180px;
+            background: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: #999;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 0.7rem;
+        }
+
+        .project-description {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .view-all-btn {
+            display: inline-block;
+            background: #f5f5f5;
+            color: #333;
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+            margin: 2rem auto;
+            display: block;
+            width: fit-content;
+        }
+
+        .view-all-btn:hover {
+            background: #e0e0e0;
+        }
+
+        .community-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 5rem;
+        }
+
+        .community-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .community-logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+        }
+
+        .community-content h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 0.3rem;
+        }
+
+        .community-content p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.2rem;
+        }
+
+        .community-meta {
+            font-size: 0.85rem;
+            color: #999;
+        }
+
+        .tech-section {
+            margin-bottom: 3rem;
+        }
+
+        .tech-category {
+            margin-bottom: 2.5rem;
+        }
+
+        .tech-category-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #333;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .tech-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #555;
+        }
+
+        .tech-icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .footer-note {
+            margin-top: 1rem;
+            color: #999;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .social-links a {
+            color: #666;
+            text-decoration: none;
+        }
+
+        @media (max-width: 968px) {
+            .experience-grid,
+            .community-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Nimsara Perera</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#connect">Connect</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Professional Journey Section -->
+        <div class="section-header">
+            <h1 class="section-title">Professional Journey</h1>
+            <p class="section-subtitle">A summary of my previous work experience.</p>
+        </div>
+
+        <div class="experience-grid">
+
+            <div class="experience-card">
+                <div class="company-logo logo-blue">⚙️</div>
+                <div class="experience-content">
+                    <h3 class="job-title">LOLC Finance PLC</h3>
+                    <p class="company-name">Officer – Customer Service Operations (COE)</p>
+                    <p class="job-meta">Aug 2024 – Apr 2025<br>on site</p>
+                    <p class="job-description">Handled backend operations, data entry, and record management using Oysis; performed Excel-based data handling and coordinated with branch networks.</p>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- Featured Projects Section -->
+        <div class="section-header">
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">Check out some of the projects I've worked on.</p>
+        </div>
+
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-image">
+                    <div style="background: linear-gradient(135deg, #f7971e 0%, #ffd200 100%); width: 100%; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem;">Desktop<br>Application</div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Food Take Away Management System</h3>
+                    <p class="project-description">Developed a C# Windows Forms desktop application with SQL Server to manage food takeaway operations, including customer, food item, order, and payment management, using full CRUD functionality with ADO.NET and a structured database design.</p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">SMOBU</div>
+                </div>
+                <div class="project-content">
+    <h3 class="project-title">Smart Morning Buddy System (IoT Project)</h3>
+    <p class="project-description">
+ Designed and developed an IoT-based smart morning assistant using Arduino, C/C++, MQTT, and Python, integrating sensors and automation to enhance daily routines while gaining hands-on experience in teamwork and IoT development.   </p>
+    <a 
+        href="https://www.linkedin.com/posts/nimsaraperera_iot-smobu-arduino-ugcPost-7408053483829964801-vESk"
+        target="_blank"
+        class="project-link"
+    >
+        View Project on LinkedIn
+                 </a>
+               </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <div style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); width: 100%; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-style: italic; color: #999;">WebSite</div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Live Website: Forklet – Digital Canteen System </h3>
+                    <p class="project-description">Developed a web-based digital canteen platform during a SLIIT hackathon, enabling online food pre-ordering, reducing waiting time, and encouraging healthy eating habits through AI-based food recognition and time-based recommendations.</p>
+                </div>
+            </div>
+
+            <!--<div class="project-card">
+                <div class="project-image">
+                    <div style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">MindWell</div>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Mindwell Flutter App</h3>
+                    <p class="project-description">a mental health app aimed at promoting mindfulness and well-being. Built using Flutter for a smooth & seamless experience and Laravel for a robust backend, Mindwell helps users track their mood, practice mindfulness anywhere, anytime.</p>
+                </div>
+            </div> -->
+        </div>
+
+       <!-- <p style="text-align: center; color: #666; margin-bottom: 1rem;">Interesting to see more projects? Check out all my projects here.</p>
+        <a href="#" class="view-all-btn">View All Projects</a> -->
+
+    <!-- <!-- Community Engagement Section --
+        <div class="section-header">
+            <h2 class="section-title">Community Engagement</h2>
+            <p class="section-subtitle">These are my favorite tech communities I've been involved with.</p>
+        </div>
+
+        <div class="community-grid">
+            <div class="community-card">
+                <div class="community-logo" style="background: linear-gradient(135deg, #00a4ef 0%, #f25022 50%, #7fba00 75%, #ffb900 100%);">
+                    <span style="color: white; font-weight: bold;">M</span>
+                </div>
+                <div class="community-content">
+                    <h3>Microsoft</h3>
+                    <p>Microsoft Learn Student Ambassador</p>
+                    <p class="community-meta">Oct 2024 - Present · 1 year 2 months</p>
+                    <p class="community-meta">Global</p>
+                </div>
+            </div>
+
+            <div class="community-card">
+                <div class="community-logo" style="background: #ff6c37;">
+                    <span style="color: white; font-weight: bold;">P</span>
+                </div>
+                <div class="community-content">
+                    <h3>Postman</h3>
+                    <p>Postman Student Leader</p>
+                    <p class="community-meta">Oct 2024 - Present · 1 year 2 months</p>
+                    <p class="community-meta">Global</p>
+                </div>
+            </div>
+
+            <div class="community-card">
+                <div class="community-logo" style="background: #24292e;">
+                    <span style="color: white; font-weight: bold;">G</span>
+                </div>
+                <div class="community-content">
+                    <h3>GitHub</h3>
+                    <p>GitHub Campus Expert</p>
+                    <p class="community-meta">Dec 2024 - Present · 1 year 0 months</p>
+                    <p class="community-meta">Global</p>
+                </div>
+            </div>
+
+            <div class="community-card">
+                <div class="community-logo" style="background: #e3f2fd;">
+                    <span style="font-weight: bold;">🔵</span>
+                </div>
+                <div class="community-content">
+                    <h3>Microsoft Learn Student Ambassadors - Sri Lanka</h3>
+                    <p>Team Captain</p>
+                    <p class="community-meta">Apr 2024 - Present · 1 year 8 months</p>
+                    <p class="community-meta">Sri Lanka</p>
+                </div>
+            </div>
+
+            <div class="community-card">
+                <div class="community-logo logo-blue">
+                    <span style="font-weight: bold;">MS</span>
+                </div>
+                <div class="community-content">
+                    <h3>Msclub of SLIIT</h3>
+                    <p>Volunteer</p>
+                    <p class="community-meta">Jan 2023 - Present · 3 years 11 months</p>
+                    <p class="community-meta">Sri Lanka</p>
+                </div>
+            </div>
+
+            <div class="community-card">
+                <div class="community-logo" style="background: #f5f5f5;">
+                    <span style="font-weight: bold;">FOSS</span>
+                </div>
+                <div class="community-content">
+                    <h3>Foss Community of SLIIT</h3>
+                    <p>Volunteer</p>
+                    <p class="community-meta">Dec 2023 - Present · 2 years 0 months</p>
+                    <p class="community-meta">Sri Lanka</p>
+                </div>
+            </div>
+        </div> -->
+
+        <!-- Tools & Technologies Section -->
+        <div class="section-header">
+            <h2 class="section-title">Tools & Technologies</h2>
+            <p class="section-subtitle">I love using so many tools to make my work easier. Here are some of them.</p>
+        </div>
+
+        <div class="tech-section">
+            <div class="tech-category">
+                <div class="tech-grid">
+                    <div class="tech-badge">
+                        <span class="tech-icon" style="background: #e34f26;">🔴</span>
+                        <span>HTML5</span>
+                    </div>
+                    <div class="tech-badge">
+                        <span class="tech-icon" style="background: #1572b6;">🔵</span>
+                        <span>CSS3</span>
+                    </div>
+                    <div class="tech-badge">
+                        <span class="tech-icon" style="background: #f7df1e;">⚡</span>
+                        <span>Java</span>
+                    </div>
+                    <div class="tech-badge">
+                        <span class="tech-icon" style="background: #02569b;">💙</span>
+                        <span>C</span>
+                    </div>
+                    <div class="tech-badge">
+                        <span class="tech-icon" style="background: #0175c2;">🎯</span>
+                        <span>C#</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tech-category">
+                <h3 class="tech-category-title">Version Control & Collaboration</h3>
+                <div class="tech-grid">
+                    <div class="tech-badge">
+                        <span class="tech-icon" style="background: #24292e;">⚫</span>
+                        <span>GitHub</span>
+                    </div>
+                </div>
+            </div>
+
+            <!--<div class="tech-category">
+                <h3 class="tech-category-title">Artificial Intelligence & Machine Learning</h3>
+                <div class="tech-grid">
+                    <div class="tech-badge">
+                        <span class="tech-icon" style="background: #0089d6;">🧠</span>
+                        <span>Azure AI</span>
+                    </div>
+                    <div class="tech-badge">
+                        <span class="tech-icon" style="background: #0089d6;">🔵</span>
+                        <span>Azure ML</span>
+                    </div>
+                    <div class="tech-badge">
+                        <span class="tech-icon" style="background: #ff6f00;">🔶</span>
+                        <span>TensorFlow</span>
+                    </div>
+                    <div class="tech-badge">
+                        <span class="tech-icon" style="background: #ee4c2c;">🔥</span>
+                        <span>Keras</span>
+                    </div>
+                </div>
+            </div> -->
+
+            <div class="tech-category">
+                <h3 class="tech-category-title">Code Editors & IDEs</h3>
+                <div class="tech-grid">
+                    <div class="tech-badge">
+                        <span class="tech-icon" style="background: #007acc;">💙</span>
+                        <span>Visual Studio Code</span>
+                    </div>
+                    <div class="tech-badge">
+                        <span class="tech-icon" style="background: #5c2d91;">🟣</span>
+                        <span>Visual Studio</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tech-category">
+                <h3 class="tech-category-title">Project Management & Designing</h3>
+                <div class="tech-grid">
+                    <div class="tech-badge">
+                        <span class="tech-icon" style="background: #0052cc;">🔷</span>
+                        <span>Jira</span>
+                    </div>
+                    <div class="tech-badge">
+                        <span class="tech-icon" style="background: #5865f2;">🟣</span>
+                        <span>Microsoft 365</span>
+                    </div>
+                    <div class="tech-badge">
+                        <span class="tech-icon" style="background: #f24e1e;">🎨</span>
+                        <span>Figma</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p style="text-align: center; color: #999; margin-top: 3rem;">
+            Hey! I'm not an expert in all of these, but I'm continuously learning. 📚 ❤️
+        </p>
+    </div>
+
+    <footer>
+        <div class="social-links">
+            <a href="#">in</a>
+            <a href="#">X</a>
+            <a href="#">GitHub</a>
+            <a href="#">YouTube</a>
+        </div>
+        <p>Copyright © 2025 Nimsara perera</p>
+    </footer>
+</body>
+</html>
