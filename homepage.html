@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nimsara Perera</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #f5f5f5;
+            background-image: 
+                linear-gradient(rgba(200, 200, 200, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(200, 200, 200, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+			 min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            background-color: white;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .logo {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #666;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #333;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-links a {
+            color: #333;
+            font-size: 20px;
+            text-decoration: none;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 200px);
+            padding: 60px 20px 200px;
+            position: relative;
+			flex: 1;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 900px;
+            position: relative;
+        }
+
+        <!--.person-image {
+            position: absolute;
+            bottom: -80px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            height: 400px;
+            background-image: url(' ');
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        } -->
+
+        .profile-img-container {
+            position: absolute;
+            bottom: -88px;
+            left: 45%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 80px;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+			background-image: url(' ');
+            border-radius: 50%;
+            border: 3px solid #ddd;
+            background-color: white;
+            padding: 10px;
+        }
+
+        <!--.badge {
+            position: absolute;
+            bottom: 0px;
+            right: calc(50% - 150px);
+            background-color: #ffd700;
+            padding: 10px 15px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }-->
+
+        h1 {
+            font-size: 72px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        .name {
+            color: #6366f1;
+        }
+
+        .subtitle {
+            font-size: 28px;
+            color: #666;
+            line-height: 1.6;
+            margin-top: 20px;
+        }
+
+        .highlight-blue {
+            color: #6366f1;
+            font-weight: 600;
+        }
+
+        .highlight-purple {
+            color: #a855f7;
+            font-weight: 600;
+        }
+
+        .highlight-cyan {
+            color: #06b6d4;
+            font-weight: 600;
+        }
+
+        .person-img {
+            width: 250px;
+            height: auto;
+            margin-top: 40px;
+            border-radius: 10px;
+            display: none;
+        }
+
+        .tech-icon {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            font-size: 40px;
+        }
+
+        .icon-python {
+            top: 20%;
+            left: 15%;
+        }
+
+        .icon-react {
+            top: 40%;
+            left: 10%;
+            color: #61dafb;
+        }
+
+        .icon-node {
+            bottom: 30%;
+            left: 20%;
+            color: #68a063;
+        }
+
+        .icon-azure {
+            top: 25%;
+            right: 15%;
+            color: #0078d4;
+        }
+
+        .icon-angular {
+            bottom: 25%;
+            right: 20%;
+            color: #dd0031;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: white;
+            border-top: 1px solid #e5e5e5;
+            color: #666;
+            font-size: 14px;
+			margin-top: auto;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: white;
+            border: 1px solid #e5e5e5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">Nimsara Perera</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <!--<li><a href="#events">Events</a></li>-->
+            <li><a href="#connect">Connect</a></li>
+        </ul>
+        <div class="social-links">
+            <a href="#" aria-label="LinkedIn">in</a>
+            <a href="#" aria-label="GitHub">🐙</a>
+            <a href="#" aria-label="Twitter">𝕏</a>
+            <a href="#" aria-label="YouTube">▶</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="hero-content">
+            <div class="profile-img-container">
+                <svg class="profile-img" viewBox="0 0 100 100">
+                    <!--<circle cx="50" cy="50" r="45" fill="#f0f0f0"/>
+                    <circle cx="50" cy="40" r="15" fill="#ddd"/>
+                    <path d="M 20 80 Q 50 60 80 80" fill="#ddd"/>-->
+                </svg>
+            </div>
+
+         
+
+            <h1>Hello, I'm<br><span class="name">Nimsara Perera</span></h1>
+            
+            <p class="subtitle">
+                A passionate <span class="highlight-blue">Computer Science Student</span> and <span class="highlight-purple">Developer</span> who loves solving<br>
+                problems through <span class="highlight-blue">AI</span>, <span class="highlight-purple">Web Development</span>, and <span class="highlight-cyan">Cloud Computing</span>.
+            </p>
+
+           <!-- <div class="person-image"></div>-->
+
+            <div class="tech-icon icon-python">🐍</div>
+            <div class="tech-icon icon-react">⚛️</div>
+            <div class="tech-icon icon-node">⬢</div>
+            <div class="tech-icon icon-azure">🅰️</div>
+            <div class="tech-icon icon-angular">🚩</div>
+        </div>
+    </main>
+
+    <footer>
+        Copyright © 2025 Nimsara Perera
+    </footer>
+
+
+</body>
+</html>
